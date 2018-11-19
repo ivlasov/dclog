@@ -8,7 +8,7 @@ fileprivate func LogRecordParametersBase64(info: [String:Any]?) -> String? {
     guard
         let parameters = info,
         let result = (try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted))?.base64EncodedString(),
-        result.length > 0
+        result.count > 0
     else { return nil }
     return result
 }
@@ -22,9 +22,8 @@ fileprivate func LogRecordParametersObject(base64: String) -> [String:Any]? {
     return info as? [String:Any]
 }
 
-public extension Log {
+extension Log {
     public struct Record {
-        
         public let uuid         : String
         public let created      : Date
         public let tag          : String?
@@ -32,41 +31,18 @@ public extension Log {
         public let priority     : Int
         public let parameters   : [String:Any]?
         public let result       : String?
-        
-        init(tag: String?, category: Log.Category, priority: Int, parameters: [String:Any]?) {
-            self.uuid       = UUID().uuidString
-            self.created    = Date()
-            self.tag        = tag
-            self.category   = category
-            self.priority   = priority
-            self.parameters = parameters
-            self.result     = nil
-        }
-        
-        init(record: Record, result: String) {
-            uuid        = record.uuid
-            created     = record.created
-            tag         = record.tag
-            category    = record.category
-            priority    = record.priority
-            parameters  = record.parameters
-            self.result = result
-        }
-        
-        public static func ==(lhs: Record, rhs: Record) -> Bool {
-            return lhs.uuid == rhs.uuid
-        }
-        
-        enum CodingKeys: String, CodingKey {
-            case uuid
-            case created
-            case tag
-            case category
-            case priority
-            case parameters
-            case result
-        }
-        
+    }
+}
+
+extension Log.Record {
+    enum CodingKeys: String, CodingKey {
+        case uuid
+        case created
+        case tag
+        case category
+        case priority
+        case parameters
+        case result
     }
 }
 
@@ -93,5 +69,61 @@ extension Log.Record: Encodable {
         try container.encode(priority, forKey: .uuid)
         try container.encode(result, forKey: .uuid)
         try container.encode(LogRecordParametersBase64(info: parameters), forKey: .uuid)
+    }
+}
+
+extension Log.Record {
+    public static func ==(lhs: Log.Record, rhs: Log.Record) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
+}
+
+extension Log.Record {
+    init(tag: String?, category: Log.Category, priority: Int, parameters: [String:Any]?) {
+        self.uuid       = UUID().uuidString
+        self.created    = Date()
+        self.tag        = tag
+        self.category   = category
+        self.priority   = priority
+        self.parameters = parameters
+        self.result     = nil
+    }
+}
+
+extension Log.Record {
+    init(record: Log.Record, result: String) {
+        uuid        = record.uuid
+        created     = record.created
+        tag         = record.tag
+        category    = record.category
+        priority    = record.priority
+        parameters  = record.parameters
+        self.result = result
+    }
+}
+
+extension Log.Category {
+    init?(weak: String) {
+        let comps = weak.components(separatedBy: "|")
+        guard
+            comps.count == 2,
+            let domain = comps.first,
+            let category = comps.last
+            else { return nil }
+        self.rawValue = category
+        self.domain = Log.Domain(rawValue: domain)
+    }
+}
+
+extension Log.Record {
+    init?(weak: [String:Any]) {
+        guard let category = Log.Category(weak: (weak["category"] as? String) ?? "") else { return nil }
+        self.uuid       = UUID().uuidString
+        self.created    = Date()
+        self.tag        = weak["tag"] as? String
+        self.category   = category
+        self.priority   = (weak["priority"] as? Int) ?? 1000
+        self.parameters = weak["parameters"] as? [String:Any]
+        self.result     = nil
     }
 }

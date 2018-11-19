@@ -4,10 +4,10 @@
 
 import Foundation
 
-public extension Log {
-    public struct FilterOption {
-        let category: Log.Category
-        let level   : Int?
-        let tag     : String?
+extension Log {
+    public struct Option {
+        public let category : Log.Category
+        public let priority : Int?
+        public let tag      : String?
     }
 }

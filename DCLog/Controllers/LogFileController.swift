@@ -12,7 +12,7 @@ class LogFileController {
     let version = "1.0"
     
     init(url: URL, records: [Log.Record] = []) {
-        if url.lastPathComponent.length == 0 {
+        if url.lastPathComponent.count == 0 {
             self.url = URL(string: url.absoluteString + "/Log - \(LogDateFormatter().string(from: Date())).json")!
         } else {
             self.url = url
@@ -32,7 +32,7 @@ class LogFileController {
             let data = try coder.encode(File(version: version, records: records))
             try data.write(to: url)
         } catch {
-            throw NSError(localizedKey: "Failed to save log file to \(url.absoluteString)")!
+            throw NSError.localized(key: "Failed to save log file to \(url.absoluteString)")!
         }
     }
     

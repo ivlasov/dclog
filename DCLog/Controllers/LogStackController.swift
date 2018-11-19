@@ -10,13 +10,9 @@ class LogStackController {
     
     init() {}
     
-    func add(record: Log.Record) {
+    func append(record: Log.Record) {
         items.append(record)
         checkAndFlush()
-    }
-    
-    func remove(record: Log.Record) {
-        items.removeAll(where: {$0 == record})
     }
     
     fileprivate func checkAndFlush() {
@@ -24,8 +20,6 @@ class LogStackController {
         flush()
     }
     
-    func flush() {
-        
-    }
+    func flush() {}
     
 }

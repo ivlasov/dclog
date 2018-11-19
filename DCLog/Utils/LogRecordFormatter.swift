@@ -3,15 +3,16 @@
 //
 
 import Foundation
+import DCUtils
 
 public protocol LogRecordFormatter {
     func execute(record: Log.Record, result: Log.RecordResult)
 }
 
-public extension Log {
-    public class TextFormatter: LogRecordFormatter {
+extension Log.Formatter {
+    public class Object: LogRecordFormatter {
         public func execute(record: Log.Record, result: Log.RecordResult) {
-            result << (record.parameters?["text"] as? String)
+            result << (record.parameters?["title"] as? String)
             if let object = record.parameters?["object"] as? LogDescription {
                 result << object
             } else if let object = record.parameters?["object"] {
@@ -20,3 +21,10 @@ public extension Log {
         }
     }
 }
+
+//public extension Log {
+
+//    public static func append(tag: String? = nil, category: Log.Category = .default, priority: Int = 1000, object: Any?) {
+//        Log.Instance.append(tag: tag, category: category, priority: priority, parameters: ["object" : object ?? ""])
+//    }
+//}

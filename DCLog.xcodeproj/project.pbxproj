@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782BA951217AFE3000B851ED /* LogOutputConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA950217AFE3000B851ED /* LogOutputConsole.swift */; };
+		782BA952217AFE3D00B851ED /* LogOutputConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA950217AFE3000B851ED /* LogOutputConsole.swift */; };
+		782BA953217AFE3D00B851ED /* LogOutputConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA950217AFE3000B851ED /* LogOutputConsole.swift */; };
+		782BA954217AFE3E00B851ED /* LogOutputConsole.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA950217AFE3000B851ED /* LogOutputConsole.swift */; };
+		782BA958217B090400B851ED /* DCUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787D8FF9217932370058D6CF /* DCUtils.framework */; };
+		782BA959217B090400B851ED /* DCUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 787D8FF9217932370058D6CF /* DCUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		782BA95B217B091700B851ED /* DCLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787D8C72217920C70058D6CF /* DCLog.framework */; };
+		78392C9321A06AAF00CC7D72 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78392C9221A06AAF00CC7D72 /* Utils.swift */; };
+		7844651B217BD37F008F6C9D /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844651A217BD37F008F6C9D /* LogController.swift */; };
+		7844651C217BD37F008F6C9D /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844651A217BD37F008F6C9D /* LogController.swift */; };
+		7844651D217BD37F008F6C9D /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844651A217BD37F008F6C9D /* LogController.swift */; };
+		7844651E217BD37F008F6C9D /* LogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7844651A217BD37F008F6C9D /* LogController.swift */; };
 		787D8C76217920C70058D6CF /* DCLog_iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 787D8C74217920C70058D6CF /* DCLog_iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		787D8C9D217921230058D6CF /* DCLog_tvOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 787D8C9B217921230058D6CF /* DCLog_tvOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		787D8CAA217921340058D6CF /* DCLog_watchOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 787D8CA8217921340058D6CF /* DCLog_watchOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -20,10 +32,6 @@
 		787D8D37217922520058D6CF /* LogFilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D26217922510058D6CF /* LogFilterOption.swift */; };
 		787D8D38217922520058D6CF /* LogFilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D26217922510058D6CF /* LogFilterOption.swift */; };
 		787D8D39217922520058D6CF /* LogFilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D26217922510058D6CF /* LogFilterOption.swift */; };
-		787D8D3B217922520058D6CF /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D27217922510058D6CF /* LogOutput.swift */; };
-		787D8D3C217922520058D6CF /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D27217922510058D6CF /* LogOutput.swift */; };
-		787D8D3D217922520058D6CF /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D27217922510058D6CF /* LogOutput.swift */; };
-		787D8D3E217922520058D6CF /* LogOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D27217922510058D6CF /* LogOutput.swift */; };
 		787D8D40217922520058D6CF /* LogContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D28217922510058D6CF /* LogContext.swift */; };
 		787D8D41217922520058D6CF /* LogContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D28217922510058D6CF /* LogContext.swift */; };
 		787D8D42217922520058D6CF /* LogContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787D8D28217922510058D6CF /* LogContext.swift */; };
@@ -74,7 +82,24 @@
 		787D9000217932550058D6CF /* DCUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 787D8FFF217932550058D6CF /* DCUtils.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		782BA95A217B090400B851ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				782BA959217B090400B851ED /* DCUtils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		782BA950217AFE3000B851ED /* LogOutputConsole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutputConsole.swift; sourceTree = "<group>"; };
+		78392C9221A06AAF00CC7D72 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		7844651A217BD37F008F6C9D /* LogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogController.swift; sourceTree = "<group>"; };
 		787D8C72217920C70058D6CF /* DCLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DCLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		787D8C74217920C70058D6CF /* DCLog_iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCLog_iOS.h; sourceTree = "<group>"; };
 		787D8C75217920C70058D6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,7 +120,6 @@
 		787D8D1F2179221D0058D6CF /* DCLog_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCLog_macOS.h; sourceTree = "<group>"; };
 		787D8D202179221D0058D6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787D8D26217922510058D6CF /* LogFilterOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilterOption.swift; sourceTree = "<group>"; };
-		787D8D27217922510058D6CF /* LogOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutput.swift; sourceTree = "<group>"; };
 		787D8D28217922510058D6CF /* LogContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogContext.swift; sourceTree = "<group>"; };
 		787D8D29217922510058D6CF /* LogCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogCategory.swift; sourceTree = "<group>"; };
 		787D8D2A217922510058D6CF /* LogRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogRecord.swift; sourceTree = "<group>"; };
@@ -143,6 +167,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782BA958217B090400B851ED /* DCUtils.framework in Frameworks */,
+				782BA95B217B091700B851ED /* DCLog.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +257,7 @@
 				787D8CE9217921C40058D6CF /* LaunchScreen.storyboard */,
 				787D8CEC217921C40058D6CF /* Info.plist */,
 				787D8F2921792D650058D6CF /* Cartfile */,
+				78392C9221A06AAF00CC7D72 /* Utils.swift */,
 			);
 			path = "TestApp-iOS";
 			sourceTree = "<group>";
@@ -248,11 +275,11 @@
 			isa = PBXGroup;
 			children = (
 				787D8D26217922510058D6CF /* LogFilterOption.swift */,
-				787D8D27217922510058D6CF /* LogOutput.swift */,
 				787D8D28217922510058D6CF /* LogContext.swift */,
 				787D8D29217922510058D6CF /* LogCategory.swift */,
 				787D8D2A217922510058D6CF /* LogRecord.swift */,
 				787D8D2B217922510058D6CF /* LogDomain.swift */,
+				782BA950217AFE3000B851ED /* LogOutputConsole.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +287,7 @@
 		787D8D2C217922520058D6CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7844651A217BD37F008F6C9D /* LogController.swift */,
 				787D8D2D217922520058D6CF /* LogFileController.swift */,
 				787D8D2E217922520058D6CF /* LogStackController.swift */,
 			);
@@ -387,6 +415,7 @@
 				787D8CDA217921C30058D6CF /* Sources */,
 				787D8CDB217921C30058D6CF /* Frameworks */,
 				787D8CDC217921C30058D6CF /* Resources */,
+				782BA95A217B090400B851ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -439,6 +468,7 @@
 					};
 					787D8CDD217921C30058D6CF = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 					787D8D1C2179221D0058D6CF = {
 						CreatedOnToolsVersion = 10.0;
@@ -516,6 +546,7 @@
 			files = (
 				787D8D45217922520058D6CF /* LogCategory.swift in Sources */,
 				787D8D6D217922520058D6CF /* LogDateFormatter.swift in Sources */,
+				7844651B217BD37F008F6C9D /* LogController.swift in Sources */,
 				787D8D72217922520058D6CF /* Log.swift in Sources */,
 				787D8D36217922520058D6CF /* LogFilterOption.swift in Sources */,
 				787D8D63217922520058D6CF /* LogRecordFormatter.swift in Sources */,
@@ -524,7 +555,7 @@
 				787D8D5E217922520058D6CF /* LogRecordResult.swift in Sources */,
 				787D8D4F217922520058D6CF /* LogDomain.swift in Sources */,
 				787D8D68217922520058D6CF /* Utils.swift in Sources */,
-				787D8D3B217922520058D6CF /* LogOutput.swift in Sources */,
+				782BA951217AFE3000B851ED /* LogOutputConsole.swift in Sources */,
 				787D8D54217922520058D6CF /* LogFileController.swift in Sources */,
 				787D8D59217922520058D6CF /* LogStackController.swift in Sources */,
 			);
@@ -536,6 +567,7 @@
 			files = (
 				787D8D48217922520058D6CF /* LogCategory.swift in Sources */,
 				787D8D70217922520058D6CF /* LogDateFormatter.swift in Sources */,
+				7844651E217BD37F008F6C9D /* LogController.swift in Sources */,
 				787D8D75217922520058D6CF /* Log.swift in Sources */,
 				787D8D39217922520058D6CF /* LogFilterOption.swift in Sources */,
 				787D8D66217922520058D6CF /* LogRecordFormatter.swift in Sources */,
@@ -544,7 +576,7 @@
 				787D8D61217922520058D6CF /* LogRecordResult.swift in Sources */,
 				787D8D52217922520058D6CF /* LogDomain.swift in Sources */,
 				787D8D6B217922520058D6CF /* Utils.swift in Sources */,
-				787D8D3E217922520058D6CF /* LogOutput.swift in Sources */,
+				782BA954217AFE3E00B851ED /* LogOutputConsole.swift in Sources */,
 				787D8D57217922520058D6CF /* LogFileController.swift in Sources */,
 				787D8D5C217922520058D6CF /* LogStackController.swift in Sources */,
 			);
@@ -556,6 +588,7 @@
 			files = (
 				787D8D47217922520058D6CF /* LogCategory.swift in Sources */,
 				787D8D6F217922520058D6CF /* LogDateFormatter.swift in Sources */,
+				7844651D217BD37F008F6C9D /* LogController.swift in Sources */,
 				787D8D74217922520058D6CF /* Log.swift in Sources */,
 				787D8D38217922520058D6CF /* LogFilterOption.swift in Sources */,
 				787D8D65217922520058D6CF /* LogRecordFormatter.swift in Sources */,
@@ -564,7 +597,7 @@
 				787D8D60217922520058D6CF /* LogRecordResult.swift in Sources */,
 				787D8D51217922520058D6CF /* LogDomain.swift in Sources */,
 				787D8D6A217922520058D6CF /* Utils.swift in Sources */,
-				787D8D3D217922520058D6CF /* LogOutput.swift in Sources */,
+				782BA953217AFE3D00B851ED /* LogOutputConsole.swift in Sources */,
 				787D8D56217922520058D6CF /* LogFileController.swift in Sources */,
 				787D8D5B217922520058D6CF /* LogStackController.swift in Sources */,
 			);
@@ -576,6 +609,7 @@
 			files = (
 				787D8CE3217921C30058D6CF /* ViewController.swift in Sources */,
 				787D8CE1217921C30058D6CF /* AppDelegate.swift in Sources */,
+				78392C9321A06AAF00CC7D72 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +619,7 @@
 			files = (
 				787D8D46217922520058D6CF /* LogCategory.swift in Sources */,
 				787D8D6E217922520058D6CF /* LogDateFormatter.swift in Sources */,
+				7844651C217BD37F008F6C9D /* LogController.swift in Sources */,
 				787D8D73217922520058D6CF /* Log.swift in Sources */,
 				787D8D37217922520058D6CF /* LogFilterOption.swift in Sources */,
 				787D8D64217922520058D6CF /* LogRecordFormatter.swift in Sources */,
@@ -593,7 +628,7 @@
 				787D8D5F217922520058D6CF /* LogRecordResult.swift in Sources */,
 				787D8D50217922520058D6CF /* LogDomain.swift in Sources */,
 				787D8D69217922520058D6CF /* Utils.swift in Sources */,
-				787D8D3C217922520058D6CF /* LogOutput.swift in Sources */,
+				782BA952217AFE3D00B851ED /* LogOutputConsole.swift in Sources */,
 				787D8D55217922520058D6CF /* LogFileController.swift in Sources */,
 				787D8D5A217922520058D6CF /* LogStackController.swift in Sources */,
 			);
@@ -942,7 +977,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -950,6 +991,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dclife.TestApp-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -959,7 +1001,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "TestApp-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

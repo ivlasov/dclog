@@ -4,26 +4,32 @@
 
 import Foundation
 
-public extension Log {
+extension Log {
     public struct Context {
-        
-        public enum Output {
-            case console
-            case stream
-            case streamTo(folder: URL)
-        }
-        
         public let output   : Output
-        public let options  : [Log.FilterOption]
+        public let options  : [Log.Option]
         public let include  : [Log.Category]
         public let exclude  : [Log.Category]
-        
-        public init(output: Output, options: [Log.FilterOption] = [], include: [Log.Category] = [], exclude: [Log.Category] = []) {
-            self.output = output
-            self.options = options
-            self.include = include
-            self.exclude = exclude
+    }
+}
+
+extension Log.Context {
+    public enum Output {
+        case console
+        case stream
+        case streamTo(folder: URL)
+    }
+}
+
+extension Log.Context {
+    func canOutput(record: Log.Record) -> Bool {
+        if
+            include.count > 0 && include.contains(record.category),
+            exclude.contains(record.category),
+            let option = options.filter({$0.category == record.category}).first,
+            let tag = option.tag, record.tag != tag,
+            let priority = option.priority, record.priority > priority {
         }
-        
+        return true
     }
 }
